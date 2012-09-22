@@ -6,7 +6,7 @@
 sendmail() ->
 	% Step 1: Let's start by entering the web service URL and the API-token you've been provided
 	% If you haven't gotten your API-token yet. Log into AlphaMail or contact support at "support@comfirm.se".
-	Service = email_service("http://api.amail.io/v2", "50315633625b12-91553543"),
+	Service = email_service("http://api.amail.io/v2", "YOUR-ACCOUNT-API-TOKEN-HERE"),
 	
 	% Step 2: Let's fill in the gaps for the variables (stuff) we've used in our template
 	Message = [
@@ -16,10 +16,10 @@ sendmail() ->
 	
 	% Step 3: Let's set up everything that is specific for delivering this email
 	Payload = message_payload(
-		143,										% Project Id
-		email_contact(<<"Timothy">>, <<"timothy.johansson@comfirm.se">>),		% Sender
-		email_contact(1234, <<"Timothy">>, <<"timothy.johansson@comfirm.se">>),		% Receiver
-		Message										% JSON serializable payoad data
+		2,												% Project Id
+		email_contact(<<"Sender Company Name">>, <<"your-sender-email@your-sender-domain.com">>),	% Sender
+		email_contact(0, <<"Joe E. Receiver">>, <<"timothy.johansson@comfirm.se">>),			% Receiver (with receiver id)
+		Message												% JSON serializable payload data
 	),
 	
 	% Step 4: Haven't we waited long enough. Let's send this!
