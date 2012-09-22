@@ -1,8 +1,8 @@
 {application, alphamail, [
-	{description, "Perl client for sending transactional e-mail with AlphaMail"},
+	{description, "Erlang client for sending transactional e-mail with AlphaMail"},
 	{vsn, "1.0.0"},
 	{modules, []},
 	{registered, []},
-	{applications, [kernel, stdlib]},
+	{applications, [kernel, stdlib, mochijson]},
 	{env, []}
 ]}.
