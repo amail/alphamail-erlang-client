@@ -13,7 +13,7 @@ Read more about transactional emails on http://www.comfirm.se.
 	$ ./rebar compile
 	$ erl -pa ebin/ /path/to/mochiweb/ebin/
 
-	Service = alphamail:email_service("YOUR-ACCOUNT-API-TOKEN-HERE"),
+	Service = alphamail:email_service("YOUR-ACCOUNT-API-TOKEN-HERE").
 	Payload = alphamail:message_payload(
 		2,												% Project id
 		alphamail:email_contact(<<"Sender Name">>, <<"sender@domain.org">>),				% Sender
@@ -27,12 +27,11 @@ Read more about transactional emails on http://www.comfirm.se.
 			]}},
 			{"dateOfBirth", 1989}
 		]
-	),
+	).
 	alphamail:queue(Service, Payload).
 
 ## Dependencies
 
 This module requires these other modules and libraries:
 
- * httpc
  * mochijson
