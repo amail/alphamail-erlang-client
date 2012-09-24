@@ -1,11 +1,16 @@
-Comfirm AlphaMail Erlang Client (v1.0.0)
+Comfirm AlphaMail Erlang Client
 ======================
 
-This module is the official client library for sending transactional emails with the cloud service AlphaMail.
-To use this service you need an account. You can sign up for an free account on our website (http://www.comfirm.se). 
+Use this module to connect your Erlang applications to the [AlphaMail](http://www.comfirm.se) service. Start sending transactional email today without the hassle of SMTP and large blocks of unmaintainable HTML.
+
+AlphaMail supports templating ([Comlang](http://docs.amail.io/?section=comlang)), DKIM signatures and reliable delivery. Beside that, we got awesome statistics.
+
+To use this service you need an account. You can sign up for an free account on our website.
+
+http://www.comfirm.se/
 
 This is not a service for sending SPAM, newsletters or bulk emails of any kind. This is for transactional emails exclusive. 
-Read more about transactional emails on http://www.comfirm.se.
+Read more about transactional emails [here](http://comfirm.se/transactional-email/).
 
 
 ## Example
@@ -20,7 +25,7 @@ Read more about transactional emails on http://www.comfirm.se.
     	alphamail:email_contact(1234, <<"Joe E. Receiver">>, <<"email-of-receiver@comfirm.se">>),	% Receiver (with receiver id)
     	% JSON serializable payload data
     	[
-    		{"id", 1234},
+    		{"userId", 1234},
     		{"name", {struct, [
     			{"first", "Joe"},
     			{"last", "E. Receiver"},
