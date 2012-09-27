@@ -5,7 +5,7 @@ Use this module to connect your Erlang applications to the [AlphaMail](http://ww
 
 AlphaMail supports templating ([Comlang](http://docs.amail.io/?section=comlang)), DKIM signatures and reliable delivery. Beside that, we got awesome statistics.
 
-To use this service you need an account. You can sign up for an free account on our website.
+To use this service you need an account. You can sign up for a free account on our website.
 
 http://www.comfirm.se/
 
