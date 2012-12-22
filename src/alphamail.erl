@@ -33,7 +33,7 @@ message_payload(ProjectId, Sender, Receiver, BodyObject) ->
 email_contact(Name, Email) ->
 	[{id, 0}, {name, Name}, {email, Email}].
 	
-email_contact(Id, Name, Email) ->
+email_contact(Name, Email, Id) ->
 	[{id, Id}, {name, Name}, {email, Email}].
 
 %% POST /email/queue

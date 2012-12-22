@@ -18,7 +18,7 @@ sendmail() ->
 	Payload = message_payload(
 		2,												% Project Id
 		email_contact(<<"Sender Company Name">>, <<"your-sender-email@your-sender-domain.com">>),	% Sender
-		email_contact(0, <<"Joe E. Receiver">>, <<"email-of-receiver@comfirm.se">>),			% Receiver (with receiver id)
+		email_contact(<<"Joe E. Receiver">>, <<"email-of-receiver@comfirm.se">>, 1234),			% Receiver, the 3rd argument is the optional receiver id and should be either a string or an integer
 		Message												% JSON serializable payload data
 	),
 	
