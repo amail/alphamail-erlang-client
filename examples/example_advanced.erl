@@ -5,7 +5,7 @@
 %% AlphaMail example with error handling
 sendmail() ->
 	% Step 1: Let's start by entering the web service URL and the API-token you've been provided
-	% If you haven't gotten your API-token yet. Log into AlphaMail or contact support at "support@comfirm.se".
+	% If you haven't gotten your API-token yet. Log into AlphaMail or contact support at "support@amail.io".
 	Service = email_service("http://api.amail.io/v2", "YOUR-ACCOUNT-API-TOKEN-HERE"),
 	
 	% Step 2: Let's fill in the gaps for the variables (stuff) we've used in our template
@@ -18,7 +18,7 @@ sendmail() ->
 	Payload = message_payload(
 		2,												% Project Id
 		email_contact(<<"Sender Company Name">>, <<"your-sender-email@your-sender-domain.com">>),	% Sender
-		email_contact(<<"Joe E. Receiver">>, <<"email-of-receiver@comfirm.se">>, 1234),			% Receiver, the 3rd argument is the optional receiver id and should be either a string or an integer
+		email_contact(<<"Joe E. Receiver">>, <<"email-of-receiver@amail.io">>, 1234),			% Receiver, the 3rd argument is the optional receiver id and should be either a string or an integer
 		Message												% JSON serializable payload data
 	),
 	
@@ -53,5 +53,5 @@ sendmail() ->
 	
 	% Writing to out like a boss
 	io:format("~n~nIn doubt or experiencing problems?~n" ++
- 		  "Please email our support at support@comfirm.se~n").
+ 		  "Please email our support at support@amail.io~n").
  

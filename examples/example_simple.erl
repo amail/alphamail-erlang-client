@@ -8,7 +8,7 @@ sendmail() ->
 	Payload = alphamail:message_payload(
 		2,												% Project id
 		alphamail:email_contact(<<"Sender Name">>, <<"sender@domain.org">>),				% Sender
-		alphamail:email_contact(<<"Joe E. Receiver">>, <<"email-of-receiver@comfirm.se">>, 1234),	% Receiver, the 3rd argument is the optional receiver id and should be either a string or an integer
+		alphamail:email_contact(<<"Joe E. Receiver">>, <<"email-of-receiver@amail.io">>, 1234),	% Receiver, the 3rd argument is the optional receiver id and should be either a string or an integer
 		% JSON serializable payload data
 		[
 			{"message", <<"Hello world like a boss!">>}, 							% Represents the <# payload.message #> in our template

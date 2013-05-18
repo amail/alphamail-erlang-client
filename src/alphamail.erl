@@ -13,7 +13,7 @@
 %% THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -module(alphamail).
--author("timothy.johansson@comfirm.se").
+-author("timothy.johansson@amail.io").
 -export([email_service/1, email_service/2, queue/2, message_payload/4, email_contact/2, email_contact/3]).
 -define(SERVICE_URL, "http://api.amail.io/v2").
 
@@ -65,7 +65,7 @@ queue(Service, Payload) ->
     	
     	% HTTP info
     	ContentType = "application/json",
-    	ContentLength = integer_to_list(length(Data)),
+    	ContentLength = integer_to_list(length(lists:flatten(Data))), 
     	
     	Headers = [auth_header("", ApiToken), {"Host", extract_host(ServiceUrl)}, {"Content-Length", ContentLength}, {"Connection", "Close"}],
     	Options = [{body_format, string}, {headers_as_is, true}],
@@ -103,6 +103,8 @@ handle_response(Response) ->
 			case Json of
 				{struct, [{_, ErrorCode}, {_, Message}, {_, Result}]} ->
 					Res = {ErrorCode, Message, Result};
+				{struct, [{_, ErrorCode}, {_, Message}]} ->
+					Res = {ErrorCode, Message, ""};
 				_Else ->
 					Res = {-4, "Unknown", ""}
 			end;						

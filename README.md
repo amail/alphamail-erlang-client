@@ -1,16 +1,16 @@
 Comfirm AlphaMail Erlang Client
 ======================
 
-Use this module to connect your Erlang applications to the [AlphaMail](http://www.comfirm.se) service. Start sending transactional email today without the hassle of SMTP and large blocks of unmaintainable HTML.
+Use this module to connect your Erlang applications to the [AlphaMail](http://amail.io/) service. Start sending transactional email today without the hassle of SMTP and large blocks of unmaintainable HTML.
 
 AlphaMail supports templating ([Comlang](http://amail.io/#/docs/comlang/)), DKIM signatures and reliable delivery. Beside that, we got awesome statistics.
 
 To use this service you need an account. You can sign up for a free account on our website.
 
-http://www.comfirm.se/
+http://amail.io/
 
 This is not a service for sending SPAM, newsletters or bulk emails of any kind. This is for transactional emails exclusive. 
-Read more about transactional emails [here](http://comfirm.se/transactional-email/).
+Read more about transactional emails [here](http://amail.io/transactional-email/).
 
 
 ## Example
@@ -22,7 +22,7 @@ Read more about transactional emails [here](http://comfirm.se/transactional-emai
     Payload = alphamail:message_payload(
     	2,												% Project id
     	alphamail:email_contact(<<"Sender Name">>, <<"sender@domain.org">>),				% Sender
-    	alphamail:email_contact(<<"Joe E. Receiver">>, <<"email-of-receiver@comfirm.se">>, 1234),	% Receiver, the 3rd argument is the optional receiver id and should be either a string or an integer
+    	alphamail:email_contact(<<"Joe E. Receiver">>, <<"email-of-receiver@amail.io">>, 1234),	% Receiver, the 3rd argument is the optional receiver id and should be either a string or an integer
     	% JSON serializable payload data
     	[
     		{"userId", 1234},
