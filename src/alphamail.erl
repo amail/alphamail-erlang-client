@@ -1,7 +1,7 @@
 %%
 %% Erlang AlphaMail Client
 %%
-%% Copyright (c) 2012, Comfirm AB
+%% Copyright (c) 2012-2013, Comfirm AB
 %% All rights reserved.
 %%
 %% Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
