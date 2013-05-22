@@ -6,7 +6,7 @@
 sendmail() ->
 	% Step 1: Let's start by entering the web service URL and the API-token you've been provided
 	% If you haven't gotten your API-token yet. Log into AlphaMail or contact support at "support@amail.io".
-	Service = email_service("http://api.amail.io/v2", "YOUR-ACCOUNT-API-TOKEN-HERE"),
+	Service = email_service("http://api.amail.io/v2/", "YOUR-ACCOUNT-API-TOKEN-HERE"),
 	
 	% Step 2: Let's fill in the gaps for the variables (stuff) we've used in our template
 	Message = [

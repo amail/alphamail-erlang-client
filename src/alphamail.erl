@@ -15,7 +15,7 @@
 -module(alphamail).
 -author("timothy.johansson@amail.io").
 -export([email_service/1, email_service/2, queue/2, message_payload/4, email_contact/2, email_contact/3]).
--define(SERVICE_URL, "http://api.amail.io/v2").
+-define(SERVICE_URL, "http://api.amail.io/v2/").
 
 
 %% Email service
@@ -71,7 +71,7 @@ queue(Service, Payload) ->
     	Options = [{body_format, string}, {headers_as_is, true}],
     	
     	% Make the HTTP request and handle the response
-    	handle_response(httpc:request(post, {ServiceUrl ++ "/email/queue", Headers, ContentType, Data}, [], Options)).
+    	handle_response(httpc:request(post, {ServiceUrl ++ "email/queue", Headers, ContentType, Data}, [], Options)).
 
 %% Create basic HTTP auth header
 auth_header(User, Pass) ->
